@@ -13,6 +13,10 @@ class Welcome extends CI_Controller {
 	}
 
 
+	public function novoContato(){
+		echo "Novo contato";
+	}
+
 	public function buscarContato(){
 		echo "Buscar Contato";
 	}

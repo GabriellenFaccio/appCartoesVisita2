@@ -4,7 +4,7 @@
 	<title>Formulario</title>
 </head>
 <body>
-	<form action="Welcome/cadastrarNovoContato" method="POST">
+	<form action="novoContato" method="POST">
 		<label>Nome : </label>
 		<input type="text" name="nome">
 
