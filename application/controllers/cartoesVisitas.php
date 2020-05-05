@@ -29,8 +29,14 @@ class CartoesVisitas extends CI_Controller{
 	}
 
 	public function buscarContato(){
-		$this->cartoesVisitas_model->listarContatos();
-		echo "Buscar Contato";
+		$query = $this->cartoesVisitas_model->listarContatos();
+
+		foreach ($query->result() as $row) {
+	    	$dados['dados'] = $row->nome;
+	    	$this->load->view('paginasContatos/listarContatos', $dados);
+		}
+
+		//$this->load->view('paginasContatos/listarContatos', $dados);
 	}
 }
 ?>
