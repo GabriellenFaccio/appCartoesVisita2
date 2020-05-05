@@ -6,6 +6,11 @@ class CartoesVisitas extends CI_Controller{
 	public $email;
 	public $telefone;
 
+	public function __construct(){
+		parent::__construct();
+		$this->load->model('new_models');
+	}
+
 	public function novoContato(){
 		echo "Novo contato";
 
@@ -24,7 +29,7 @@ class CartoesVisitas extends CI_Controller{
 	}
 
 	public function buscarContato(){
-
+		$this->new_models->listarContatos();
 		echo "Buscar Contato";
 	}
 }
