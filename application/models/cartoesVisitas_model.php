@@ -1,5 +1,6 @@
 <?php
-class New_models extends CI_Model{
+class cartoesVisitas_model extends CI_Model{
+
 	public function __construct(){
 		$this->load->database();
 	}

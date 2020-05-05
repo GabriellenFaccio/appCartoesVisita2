@@ -8,7 +8,7 @@ class CartoesVisitas extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('new_models');
+		$this->load->model('cartoesVisitas_model');
 	}
 
 	public function novoContato(){
@@ -29,7 +29,7 @@ class CartoesVisitas extends CI_Controller{
 	}
 
 	public function buscarContato(){
-		$this->new_models->listarContatos();
+		$this->cartoesVisitas_model->listarContatos();
 		echo "Buscar Contato";
 	}
 }
