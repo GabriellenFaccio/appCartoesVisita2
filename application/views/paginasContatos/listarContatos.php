@@ -10,12 +10,18 @@
 			<td><?="LISTAGEM DE CONTATOS "?></td>
 		</tr>
 		<tr></tr>
-		<?php foreach($dadosBanco as $row): ?>
 		<tr>
-			<td> <?php print_r($row->nome); ?> </td>
-			<td> <?php print_r($row->email); ?> </td>
-			<td> <?php print_r($row->situacao); ?> </td>
-			<td> <?php print_r($row->telefone); ?> </td>
+			<td>Nome</td>
+			<td>Email</td>
+			<td>Situacao</td>
+			<td>Telefone</td>
+		</tr>
+		<?php foreach($novosItens as $row): ?>
+		<tr>
+			<td> <?php echo $row->nome; ?> </td>
+			<td> <?php echo $row->email; ?> </td>
+			<td> <?php echo $row->situacao; ?> </td>
+			<td> <?php echo $row->telefone; ?> </td>
 		</tr>
 		<?php endforeach; ?>
 		<tr><td>Final Lista</td></tr>

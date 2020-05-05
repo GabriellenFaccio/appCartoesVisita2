@@ -29,7 +29,7 @@ class CartoesVisitas extends CI_Controller{
 	}
 
 	public function buscarContato(){
-		$arrayBanco['dadosBanco'] = $this->cartoesVisitas_model->listarContatos();
+		$arrayBanco['novosItens'] = $this->cartoesVisitas_model->listarContatos();
 		$this->load->view('paginasContatos/listarContatos', $arrayBanco);
 	}
 }
