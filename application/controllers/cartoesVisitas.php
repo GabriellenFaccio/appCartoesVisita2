@@ -29,14 +29,8 @@ class CartoesVisitas extends CI_Controller{
 	}
 
 	public function buscarContato(){
-		$query = $this->cartoesVisitas_model->listarContatos();
-
-		foreach ($query->result() as $row) {
-	    	$dados['dados'] = $row->nome;
-	    	$this->load->view('paginasContatos/listarContatos', $dados);
-		}
-
-		//$this->load->view('paginasContatos/listarContatos', $dados);
+		$query['query'] = $this->cartoesVisitas_model->listarContatos();
+		$this->load->view('paginasContatos/listarContatos', $query);
 	}
 }
 ?>

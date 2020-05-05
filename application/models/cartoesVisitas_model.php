@@ -7,7 +7,7 @@ class cartoesVisitas_model extends CI_Model{
 
 	public function listarContatos(){ 
 	   $query = $this->db->query ('SELECT * FROM  cartoesvisitas');
-	   return $query; 
+	   return $query->result(); 
 	}
 }
 ?>

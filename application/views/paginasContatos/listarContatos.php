@@ -1,7 +1,9 @@
 <?php
-	//echo "LISTAGEM DE CONTATOS <br><br>";
+	echo "LISTAGEM DE CONTATOS <br><br>";
 
-	print_r($dados);
-	echo "<br>";
+	foreach ($query as $row){
+		echo $row->nome."<br>";
+	}
+
 
 ?>
