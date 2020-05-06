@@ -18,13 +18,14 @@ class CartoesVisitas extends CI_Controller{
 		$this->email = $this->input->post('email');
 		$this->telefone = $this->input->post('telefone');
 
+		$this->cartoesVisitas_model->inserirContatos($this);
+
 		echo "<br>Nome : ".$this->nome."<br>";
 		echo "Email : ".$this->email."<br>";
 		echo "Telefone : ".$this->telefone."<br>";
 	}
 
 	public function cadastrarNovoContato(){
-		echo "Cadastrar Novo Contato <br>";
 		$this->load->view('paginasContatos/cadastroContato');
 	}
 
