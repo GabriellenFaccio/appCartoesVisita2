@@ -22,6 +22,9 @@
 			<td> <?php echo $row->email; ?> </td>
 			<td> <?php echo $row->situacao; ?> </td>
 			<td> <?php echo $row->telefone; ?> </td>
+			<td><button id="visualizarContato"><a href="visualizarContato?id=<?=$row->id?>">Visualizar</a></button></td>
+			<td><button id="editarContato"><a href="editarContato?id=<?=$row->id?>">Editar</a></button></td>
+			<td><button id="excluirContato"><a href="excluirContato?id=<?=$row->id?>">Excluir</a></button></td>
 		</tr>
 		<?php endforeach; ?>
 		<tr><td>Final Lista</td></tr>
