@@ -46,7 +46,7 @@
 <body>
 <div id="container">
 <div id="body">
-	<h1>Visualizar contato <h1>
+	<h1>Visualizar o contato <h1>
 	<table> 
 		<tr>
 			<td>
@@ -72,6 +72,10 @@
 						<input type="text" name="newNome" id="newNome" value="<?php echo $row->nome;?>"><br><br>
 
 						<label>Situação : </label>
+						<select name="newSituacao" id="newSituacao">
+							<option >Ativar</option>
+							<option>Desativar</option>
+						</select>
 						<input type="text" name="newSituacao" id="newSituacao" value="<?php echo $row->situacao;?>"><br><br>
 
 						<label>Email : </label>

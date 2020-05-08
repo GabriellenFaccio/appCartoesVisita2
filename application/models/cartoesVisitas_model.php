@@ -6,8 +6,9 @@ class cartoesVisitas_model extends CI_Model{
 	}
 
 	public function listarContatos(){ 
-	   $query = $this->db->query ("SELECT * FROM  cartoesvisitas");
-	   return $query->result(); 
+		$select = $this->db->get('cartoesvisitas');
+	   	//$select = $this->db->query ("SELECT * FROM  cartoesvisitas");
+	   	return $select->result(); 
 	}
 
 	public function inserirContatos($dados){

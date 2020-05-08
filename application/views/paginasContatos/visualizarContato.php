@@ -65,16 +65,16 @@
 	<div id="container">
 	<div id="body">
 		<h1>Visualizar contato <h1>
-		<form action="novoContato" method="POST">
+		<form action="buscarContato" method="POST">
 			<?php foreach($itemSelect as $row): ?>
 				<!--<input type="text" name="nome" id="nome" value="<?php echo $row->nome;?>"><br><br>-->
-				<label>Id : </label><label><?php echo $row->id;?></label><br><br>
-				<label>Nome : </label><label><?php echo $row->nome;?></label><br><br>
-				<label>Situação : </label><label><?php echo $row->situacao;?></label><br><br>
-				<label>Email : </label><label><?php echo $row->email;?></label><br><br>
-				<label>Telefone : </label><label><?php echo $row->telefone;?></label><br><br>
+				<label>Id : <?php echo $row->id;?></label><br><br>
+				<label>Nome : <?php echo $row->nome;?></label><br><br>
+				<label>Situação : <?php echo $row->situacao;?></label><br><br>
+				<label>Email : <?php echo $row->email;?></label><br><br>
+				<label>Telefone : <?php echo $row->telefone;?></label><br><br>
 			<?php endforeach; ?>
-			<button><a href="buscarContato">Voltar</a></button>
+			<button><a>Voltar</a></button>
 		</form>
 	</div>
 	</div>
