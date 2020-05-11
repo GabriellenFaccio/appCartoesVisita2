@@ -12,6 +12,7 @@
 			margin: 40px;
 			font: 13px/20px normal Helvetica, Arial, sans-serif;
 			color: #4F5155;
+			background-image: url("https://i.pinimg.com/originals/57/bb/66/57bb66cb4895565d755910654a6b0c80.jpg");
 		}
 
 		a {
@@ -30,34 +31,25 @@
 			padding: 14px 15px 10px 15px;
 		}
 
-		code {
-			font-family: Consolas, Monaco, Courier New, Courier, monospace;
-			font-size: 12px;
-			background-color: #f9f9f9;
-			border: 1px solid #D0D0D0;
-			color: #002166;
-			display: block;
-			margin: 14px 0 14px 0;
-			padding: 12px 10px 12px 10px;
-		}
-
 		#body {
 			margin: 0 15px 0 15px;
-		}
-
-		p.footer {
-			text-align: right;
-			font-size: 11px;
-			border-top: 1px solid #D0D0D0;
-			line-height: 32px;
-			padding: 0 10px 0 10px;
-			margin: 20px 0 0 0;
 		}
 
 		#container {
 			margin: 10px;
 			border: 1px solid #D0D0D0;
+			border-radius: 15px;
 			box-shadow: 0 0 8px #D0D0D0;
+			background-color: white;
+		}
+		button{
+			border: 1px solid #D0D0D0;
+			border-radius: 15px;
+			padding: 4px;
+			padding-left: 13px;
+			padding-right: 13px;
+			background-color: pink;
+			color: black;
 		}
 	</style>
 </head>

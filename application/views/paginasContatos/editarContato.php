@@ -12,6 +12,7 @@
 			margin: 40px;
 			font: 13px/20px normal Helvetica, Arial, sans-serif;
 			color: #4F5155;
+			background-image: url("https://i.pinimg.com/originals/57/bb/66/57bb66cb4895565d755910654a6b0c80.jpg");
 		}
 
 		a {
@@ -37,9 +38,19 @@
 		#container {
 			margin: 10px;
 			border: 1px solid #D0D0D0;
+			border-radius: 15px;
 			box-shadow: 0 0 8px #D0D0D0;
+			background-color: white;
 		}
-
+		button{
+			border: 1px solid #D0D0D0;
+			border-radius: 15px;
+			padding: 4px;
+			padding-left: 13px;
+			padding-right: 13px;
+			background-color: pink;
+			color: black;
+		}
 		td{padding-right: 70px;}
 	</style>
 </head>
@@ -59,33 +70,32 @@
 						<label>Email : </label><label><?php echo $row->email;?></label><br><br>
 						<label>Telefone : </label><label><?php echo $row->telefone;?></label><br><br>
 					<?php endforeach; ?>
-					<button><a href="buscarContato">Voltar</a></button>
+					<button><a href="<?=base_url('cartoesVisitas/buscarContato')?>">Voltar</a></button>
 				</form>
 			</td>
 			<td>
-				<form action="salvarUpdate?id=<?=$row->id?>" method="POST">
+				<form action="salvarUpdate" method="POST">
 					<?php foreach($itemSelect as $row): ?>
 						<label>Id : </label>
 						<label><?php echo $row->id;?></label><br><br>
 
 						<label>Nome : </label>
-						<input type="text" name="newNome" id="newNome" value="<?php echo $row->nome;?>"><br><br>
+						<input type="text" name="nome" id="nome" value="<?php echo $row->nome;?>"><br><br>
 
 						<label>Situação : </label>
-						<select name="newSituacao" id="newSituacao">
+						<select name="situacao" id="situacao">
 							<option >Ativar</option>
 							<option>Desativar</option>
-						</select>
-						<input type="text" name="newSituacao" id="newSituacao" value="<?php echo $row->situacao;?>"><br><br>
+						</select><br><br>
 
 						<label>Email : </label>
-						<input type="text" name="newEmail" id="newEmail" value="<?php echo $row->email;?>"><br><br>
+						<input type="text" name="email" id="email" value="<?php echo $row->email;?>"><br><br>
 
 						<label>Telefone : </label>
-						<input type="text" name="newTelefone" id="newTelefone" value="<?php echo $row->telefone;?>"><br><br>
-
+						<input type="text" name="telefone" id="telefone" value="<?php echo $row->telefone;?>"><br><br>
+						
 					<?php endforeach; ?>
-					<input type="submit" name="btnSalvar" id="btnSalvar" value="Salvar">
+					<button><a href='<?=base_url("cartoesVisitas/salvarUpdate/$row->id")?>'>Salvar</a></button>
 				</form>
 			</td>
 			

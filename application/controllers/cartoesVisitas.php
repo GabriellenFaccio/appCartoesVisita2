@@ -5,10 +5,7 @@ class CartoesVisitas extends CI_Controller{
 	public $nome;
 	public $email;
 	public $telefone;
-
-	public function teste(){
-		redirect('cartoesVisitas/buscarContato');
-	}
+	public $situacao;
 
 	public function __construct(){
 		parent::__construct();
@@ -17,11 +14,12 @@ class CartoesVisitas extends CI_Controller{
 	}
 
 	public function novoContato(){
-		$this->nome 	= $this->input->post('nome');
-		$this->email 	= $this->input->post('email');
-		$this->telefone = $this->input->post('telefone');
+		$arrayDados['nome']	 	= $this->input->post('nome');
+		$arrayDados['email']    = $this->input->post('email');
+		$arrayDados['telefone'] = $this->input->post('telefone');
+		$arrayDados['situacao'] = "Ativo";
 
-		$this->cartoesVisitas_model->inserirContatos($this);
+		$this->cartoesVisitas_model->inserirContatos($arrayDados);
 
 		redirect('cartoesVisitas/buscarContato');
 	}
@@ -46,22 +44,28 @@ class CartoesVisitas extends CI_Controller{
 	}
 
 	public function salvarUpdate($idContato){
-		$novoNome 		= $this->input->post('newNome');
-		$novoEmail 		= $this->input->post('newEmail');
-		$novoTelefone 	= $this->input->post('newTelefone');
-		$novaSituacao 	= $this->input->post('newSituacao');
-		$this->cartoesVisitas_model->updateOneItem($idContato,$novoNome,$novoEmail,$novoTelefone,$novaSituacao);
+		$arrayDados['nome'] 		= $this->input->post('nome');
+		$arrayDados['email'] 		= $this->input->post('email');
+		$arrayDados['telefone'] 	= $this->input->post('telefone');
+		$arrayDados['situacao'] 	= $this->input->post('situacao');
+		$this->cartoesVisitas_model->updateOneItem($idContato, $arrayDados);
 
-		redirect('paginasContatos/editarContato');
+		redirect('paginasContatos/buscarContato');
 		/*$tableBanco['itemSelect'] = $this->cartoesVisitas_model->getOneTable($idSelected);
 		$this->load->view('paginasContatos/editarContato', $tableBanco);*/
 	}
 
-	public function excluirContato(){
-		$idSelected = filter_input(INPUT_GET, 'id');
-		$this->cartoesVisitas_model->deleteOneItem($idSelected);
+	public function excluirContato($idContato){
+		$this->cartoesVisitas_model->deleteOneItem($idContato);
 
 		redirect('welcome');
+	}
+
+	public function pesquisarContato(){
+		$novaPesquisa = $this->input->post('pesquisar');
+		$coluna = "nome";
+		$selectBanco['novosItens'] = $this->cartoesVisitas_model->getPesquisa($novaPesquisa, $coluna);
+		$this->load->view('paginasContatos/listarContatos', $selectBanco);
 	}
 }
 ?>

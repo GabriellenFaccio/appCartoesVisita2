@@ -12,7 +12,8 @@ class cartoesVisitas_model extends CI_Model{
 	}
 
 	public function inserirContatos($dados){
-		$insert = $this->db->query("INSERT INTO cartoesvisitas(nome, situacao, email, telefone) VALUES ('$dados->nome','PF','$dados->email','$dados->telefone')");
+		$insert = $this->db->insert('cartoesvisitas', $dados);
+
 	}
 
 	public function getOneTable($idSelected){
@@ -20,11 +21,26 @@ class cartoesVisitas_model extends CI_Model{
 		return $select->result();
 	}
 
-	public function updateOneItem($id, $nome, $email, $telefone, $sit){
-		$update = $this->db->query("UPDATE cartoesvisitas SET nome = \"$nome\", situacao = \"$sit\", email = \"$email\", telefone = \"$telefone\" WHERE id = $id");
+	public function getPesquisa($idSelected, $coluna){
+		$select = $this->db->query("SELECT * FROM cartoesvisitas WHERE $coluna LIKE '%$idSelected%'");
+		return $select->result();
+	}
+
+	public function updateOneItem($id, $dados){
+		$dados = array(
+			'nome' => 'Maria 123',
+			'situacao' => 'Ativado',
+			'email' => 'maria@maria.com',
+			'telefone' => '1112224'
+		);
+
+		$this->db->where('id', $id);
+		$this->db->update('cartoesvisitas', $dados);
+		//$update = $this->db->query("UPDATE cartoesvisitas SET nome = \"$nome\", situacao = \"$sit\", email = \"$email\", telefone = \"$telefone\" WHERE id = $id");
 	}
 
 	public function deleteOneItem($id){
+
 		$delete = $this->db->query("DELETE FROM cartoesvisitas WHERE id = $id");
 	}
 }
