@@ -27,12 +27,6 @@ class cartoesVisitas_model extends CI_Model{
 	}
 
 	public function updateOneItem($id, $dados){
-		$dados = array(
-			'nome' => 'Maria 123',
-			'situacao' => 'Ativado',
-			'email' => 'maria@maria.com',
-			'telefone' => '1112224'
-		);
 
 		$this->db->where('id', $id);
 		$this->db->update('cartoesvisitas', $dados);

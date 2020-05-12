@@ -74,7 +74,7 @@
 				</form>
 			</td>
 			<td>
-				<form action="salvarUpdate" method="POST">
+				<form action='<?=base_url("cartoesVisitas/salvarUpdate/$row->id")?>' method="POST">
 					<?php foreach($itemSelect as $row): ?>
 						<label>Id : </label>
 						<label><?php echo $row->id;?></label><br><br>
@@ -95,12 +95,12 @@
 						<input type="text" name="telefone" id="telefone" value="<?php echo $row->telefone;?>"><br><br>
 						
 					<?php endforeach; ?>
-					<button><a href='<?=base_url("cartoesVisitas/salvarUpdate/$row->id")?>'>Salvar</a></button>
+					<input type="submit" name="btnSalvar" value="Salvar">
 				</form>
 			</td>
 			
 		</tr>
-		</table>
+	</table>
 </div>
 </div>
 </body>

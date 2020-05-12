@@ -50,7 +50,7 @@ class CartoesVisitas extends CI_Controller{
 		$arrayDados['situacao'] 	= $this->input->post('situacao');
 		$this->cartoesVisitas_model->updateOneItem($idContato, $arrayDados);
 
-		redirect('paginasContatos/buscarContato');
+		redirect('cartoesVisitas/buscarContato');
 		/*$tableBanco['itemSelect'] = $this->cartoesVisitas_model->getOneTable($idSelected);
 		$this->load->view('paginasContatos/editarContato', $tableBanco);*/
 	}
